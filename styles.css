@@ -20,8 +20,8 @@ html {
 }
 
 ::selection {
-    background-color: var(--light2);
-    color: var(--dark);
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 
@@ -73,6 +73,7 @@ nav {
     border-radius: 10%;
     border: var(--dark) 4px solid;
     height: 300px;
+    width: 300px;
     float: right;
     margin: 20px 0;
 }
