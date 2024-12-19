@@ -24,12 +24,12 @@ html {
     color: var(--light);
 }
 
-
 body {
     background-color: var(--light);
     padding-top: 150px;
 }
 
+/* Navbar styles */
 nav {
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,7 @@ nav {
 
 .nav-links li a {
     font-family: 'Lato', sans-serif;
-    color: var(--text);
+    color: var(--dark);
     text-decoration: none;
     font-weight: 500;
 }
@@ -69,15 +69,48 @@ nav {
     transition: color 0.3s ease;
 }
 
+/* Menu button styling */
+.menu-btn {
+    display: none; /* Hidden by default */
+    background: none;
+    color: var(--dark);
+    font-size: 1.8rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--dark);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block; /* Show button only on mobile */
+    }
+}
+
+/* Profile Picture */
 .profilepic {
     border-radius: 10%;
     border: var(--dark) 4px solid;
     height: 300px;
     width: 300px;
-    float: right;
     margin: 20px 0;
 }
 
+/* About Section */
 .about {
     display: flex;
     justify-content: space-evenly;
@@ -85,23 +118,47 @@ nav {
     background-color: var(--main);
     padding: 7% 10%;
     border-radius: 10px;
-    top: 50px;
     margin: 0 5% 5%;
     min-height: 60vh;
+    gap: 20px;
 }
 
-@media (max-width: 1000px) {
+/* Text container styling */
+.one {
+    max-width: 60%;
+    text-align: left;
+}
+
+/* Text content styling */
+.about-text {
+    text-align: left;
+    max-width: 100%;
+    text-indent: 20px;
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 768px) {
     .about {
         flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center-align the content */
+        padding: 5% 5%;
+        text-align: left;
     }
 
     .profilepic {
-        float: none; /* Remove the float */
-        margin: 20px 0; /* Adjust margin */
+        width: 200px;
+        height: 200px;
+    }
+
+    .one {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .about-text {
+        text-align: left;
+        max-width: 100%;
     }
 }
-
 
 /* NEW GALLERY */
 
@@ -177,7 +234,6 @@ nav {
     right: 20px;
 }
 
-
 /* Footer */
 footer {
     text-align: center;
@@ -187,10 +243,12 @@ footer {
     color: var(--light);
     bottom: 0;
     width: 100%;
-    height: 400px;
+    max-height: 400px;
+    height: 50vw;
     justify-content: center;
     align-items: center;
     align-content: center;
+    min-height: 250px;
 }
 
 footer a {
@@ -201,4 +259,10 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    footer p {
+        padding: 0 10%;
+    }
 }
