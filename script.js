@@ -43,3 +43,9 @@ overlay.addEventListener('click', (e) => {
         overlay.style.display = 'none';
     }
 });
+
+
+// 
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('show');
+}
